@@ -1,0 +1,597 @@
+/* ============================================================
+   Bitcoin Tonight Coin — Main Stylesheet
+   ============================================================ */
+
+:root {
+  --bg: #0b0c10;
+  --bg2: #1a1b23;
+  --bg3: #23253a;
+  --accent: #f7931a;
+  --accent2: #ffe066;
+  --text: #e8eaf6;
+  --muted: #8892a4;
+  --card-radius: 18px;
+  --shadow: 0 8px 40px rgba(0, 0, 0, 0.55);
+  --font: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ─── Navigation ─────────────────────────────────────────── */
+header {
+  background: var(--bg2);
+  border-bottom: 1px solid #2a2d3e;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.logo-icon {
+  font-size: 1.6rem;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--text);
+}
+
+/* ─── Hero ───────────────────────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+  background: radial-gradient(ellipse at 50% -10%, #f7931a22 0%, transparent 70%);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 600px;
+  margin: 1.2rem auto 2rem;
+  font-size: 1.1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #000;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.2s, transform 0.1s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--accent2);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  margin-left: 0.75rem;
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+/* ─── Stats bar ──────────────────────────────────────────── */
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background: var(--bg2);
+  border-top: 1px solid #2a2d3e;
+  border-bottom: 1px solid #2a2d3e;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ─── Section ────────────────────────────────────────────── */
+section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+section .subtitle {
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+}
+
+/* ─── Coin Grid ──────────────────────────────────────────── */
+.coins-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.coin-card {
+  background: var(--bg2);
+  border: 1px solid #2a2d3e;
+  border-radius: var(--card-radius);
+  padding: 1.75rem;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.coin-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+
+.coin-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.coin-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.coin-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.coin-ticker {
+  font-size: 0.8rem;
+  color: var(--muted);
+  background: var(--bg3);
+  padding: 2px 8px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.coin-desc {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.coin-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid #2a2d3e;
+  padding-top: 1rem;
+}
+
+.coin-price {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.coin-change {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2ecc71;
+  background: #2ecc7122;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.coin-buy-btn {
+  width: 100%;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  background: var(--accent);
+  color: #000;
+  font-weight: 700;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+  display: block;
+}
+
+.coin-buy-btn:hover {
+  background: var(--accent2);
+}
+
+/* ─── How It Works ───────────────────────────────────────── */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.step {
+  background: var(--bg2);
+  border: 1px solid #2a2d3e;
+  border-radius: var(--card-radius);
+  padding: 1.75rem;
+}
+
+.step-num {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.step h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ─── Hash Demo ──────────────────────────────────────────── */
+.hash-demo {
+  background: var(--bg2);
+  border: 1px solid #2a2d3e;
+  border-radius: var(--card-radius);
+  padding: 2rem;
+  max-width: 700px;
+}
+
+.hash-demo input {
+  width: 100%;
+  background: var(--bg3);
+  border: 1px solid #3a3d4e;
+  border-radius: 10px;
+  color: var(--text);
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.hash-demo input:focus {
+  border-color: var(--accent);
+}
+
+.hash-output {
+  background: var(--bg3);
+  border-radius: 10px;
+  padding: 1rem;
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+  word-break: break-all;
+  color: var(--accent2);
+  min-height: 3rem;
+  margin-top: 0.5rem;
+}
+
+.hash-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+/* ─── Price modal / detail ───────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  background: var(--bg2);
+  border: 1px solid #2a2d3e;
+  border-radius: var(--card-radius);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 520px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #fff;
+}
+
+.modal h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.modal .modal-ticker {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.modal-price {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.modal-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.modal-meta-item {
+  background: var(--bg3);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+}
+
+.modal-meta-item .label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modal-meta-item .value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 0.2rem;
+}
+
+.paypal-btn-wrapper {
+  margin-top: 1.5rem;
+}
+
+.paypal-btn-wrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.paypal-btn-wrapper input[type="text"],
+.paypal-btn-wrapper input[type="number"] {
+  background: var(--bg3);
+  border: 1px solid #3a3d4e;
+  border-radius: 10px;
+  color: var(--text);
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.paypal-btn-wrapper input[type="text"]:focus,
+.paypal-btn-wrapper input[type="number"]:focus {
+  border-color: var(--accent);
+}
+
+.paypal-submit {
+  background: #0070ba;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.paypal-submit:hover {
+  background: #005ea6;
+}
+
+/* ─── Footer ─────────────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid #2a2d3e;
+  margin-top: 4rem;
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ─── Ticker tape ────────────────────────────────────────── */
+.ticker-wrap {
+  background: var(--bg2);
+  border-bottom: 1px solid #2a2d3e;
+  padding: 0.5rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-content {
+  display: inline-block;
+  animation: ticker 30s linear infinite;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  display: inline-block;
+  margin: 0 2rem;
+  font-size: 0.9rem;
+}
+
+.ticker-item .t-name {
+  color: var(--muted);
+  margin-right: 0.4rem;
+}
+
+.ticker-item .t-price {
+  font-weight: 700;
+  color: #fff;
+}
+
+.ticker-item .t-up {
+  color: #2ecc71;
+  margin-left: 0.3rem;
+  font-size: 0.8rem;
+}
+
+/* ─── Not-launched badge ─────────────────────────────────── */
+.badge-soon {
+  background: #f7931a22;
+  color: var(--accent);
+  border: 1px solid #f7931a44;
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  header {
+    padding: 0 1rem;
+  }
+
+  nav a {
+    margin-left: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    padding: 4rem 1rem 3rem;
+  }
+
+  .stats-bar {
+    gap: 1.5rem;
+  }
+
+  section {
+    padding: 2.5rem 1rem;
+  }
+
+  .modal {
+    padding: 1.5rem;
+  }
+
+  .modal-price {
+    font-size: 2.2rem;
+  }
+}
