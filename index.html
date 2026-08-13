@@ -1,354 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bitcoin Tonight Coin — Official Token Marketplace</title>
-  <meta name="description" content="Buy Bitcoin-grade commemorative coins for the Bitcoin Tonight show. Each coin starts at $1 and grows $1–$5 every day. Jaimie, DJ Vertigo, Fred, Darkside, Gary, Grant Cardone &amp; more." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#070817">
+  <meta name="description" content="Bitcoin Tonight service access — request creator entertainment with Infinity service coins and a traceable purpose ledger.">
+  <title>Bitcoin Tonight · Infinity Service Access</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="notice">SERVICE ACCESS APP · INFINITY LEDGER · CREATORS CHOOSE WHETHER TO ACCEPT AND GO LIVE</div>
+  <header>
+    <a class="brand" href="#top"><b>BT</b><span><strong>Bitcoin Tonight</strong><small>Infinity service access</small></span></a>
+    <nav><a href="#creators">Creators</a><a href="#request">Request</a><a href="#ledger">Ledger</a></nav>
+    <a class="wallet-pill" href="#wallet"><span id="wallet-available">10</span> Infinity</a>
+  </header>
 
-<!-- ─── Header ────────────────────────────────────────────── -->
-<header>
-  <a class="logo" href="index.html">
-    <span class="logo-icon">₿</span>
-    Bitcoin Tonight Coin
-  </a>
-  <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="#coins">Coins</a>
-    <a href="#how-it-works">How It Works</a>
-    <a href="#hash-demo">Technology</a>
-  </nav>
-</header>
-
-<!-- ─── Ticker Tape ───────────────────────────────────────── -->
-<div class="ticker-wrap">
-  <div class="ticker-content" id="ticker"></div>
-</div>
-
-<!-- ─── Hero ──────────────────────────────────────────────── -->
-<section class="hero">
-  <h1>The <span>Bitcoin Tonight</span><br/>Coin Marketplace</h1>
-  <p>
-    Bitcoin-grade SHA-256 hashing. Independent of the legacy chain.
-    Own a piece of history — every coin starts at <strong>$1</strong> and grows
-    <strong>$1–$5 every day</strong>.
-  </p>
-  <a href="#coins" class="btn">Browse Coins</a>
-  <a href="#how-it-works" class="btn btn-outline">How It Works</a>
-</section>
-
-<!-- ─── Stats Bar ─────────────────────────────────────────── -->
-<div class="stats-bar" id="stats-bar">
-  <div class="stat">
-    <div class="stat-value" id="stat-coins">7</div>
-    <div class="stat-label">Coins Available</div>
-  </div>
-  <div class="stat">
-    <div class="stat-value" id="stat-growth">$1–$5</div>
-    <div class="stat-label">Daily Growth Per Coin</div>
-  </div>
-  <div class="stat">
-    <div class="stat-value" id="stat-algo">SHA-256</div>
-    <div class="stat-label">Hashing Algorithm</div>
-  </div>
-  <div class="stat">
-    <div class="stat-value" id="stat-live-price">$1.00</div>
-    <div class="stat-label">BTN Current Price</div>
-  </div>
-</div>
-
-<!-- ─── Coins ─────────────────────────────────────────────── -->
-<section id="coins">
-  <h2>Available Coins</h2>
-  <p class="subtitle">Each coin is unique, starts at $1 at 11 PM on launch day, and appreciates daily.</p>
-  <div class="coins-grid" id="coins-grid">
-    <!-- Rendered by JS -->
-  </div>
-</section>
-
-<!-- ─── How It Works ──────────────────────────────────────── -->
-<section id="how-it-works">
-  <h2>How It Works</h2>
-  <p class="subtitle">Simple, transparent, and rising every day.</p>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">01</div>
-      <h3>Choose Your Coin</h3>
-      <p>Browse the marketplace and pick the coin that speaks to you — or collect them all.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <h3>Lock In Today's Price</h3>
-      <p>Each coin starts at $1 and gains $1–$5 per day. Buy early to get the lowest price.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <h3>Pay Securely via PayPal</h3>
-      <p>All transactions are processed through PayPal. Fast, safe, and protected by PayPal Buyer Protection.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">04</div>
-      <h3>Price Rises Daily</h3>
-      <p>A deterministic algorithm adds $1–$5 to each coin every 24 hours. About $0.20 per hour.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ─── SHA-256 Hash Demo ──────────────────────────────────── -->
-<section id="hash-demo">
-  <h2>Bitcoin-Grade Technology</h2>
-  <p class="subtitle">Every transaction is secured with the same SHA-256 algorithm that powers Bitcoin.</p>
-  <div class="hash-demo">
-    <p style="color: var(--muted); margin-bottom: 1rem; font-size: 0.95rem;">
-      Try the same hashing algorithm used to secure every Bitcoin Tonight Coin transaction:
-    </p>
-    <input type="text" id="hash-input" placeholder="Type anything to hash it…" />
-    <div class="hash-label">SHA-256 Output:</div>
-    <div class="hash-output" id="hash-output">—</div>
-  </div>
-</section>
-
-<!-- ─── Price Algorithm Info ───────────────────────────────── -->
-<section>
-  <h2>Price Algorithm</h2>
-  <p class="subtitle">Transparent, deterministic, fair.</p>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">⏰</div>
-      <h3>Launch at 11 PM</h3>
-      <p>Every coin goes live at 11:00 PM on its launch date at a starting price of $1.00.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">📈</div>
-      <h3>$1–$5 Per Day</h3>
-      <p>Each day a seeded random value between $1.00 and $5.00 is added to the coin's price. The seed is derived from the coin's identity and the day number — no one can manipulate it.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">~$0.20</div>
-      <h3>~$0.20 Per Hour</h3>
-      <p>The daily increase is spread evenly across 24 hours so the price rises smoothly throughout the day.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ─── Buy Modal ─────────────────────────────────────────── -->
-<div class="modal-overlay" id="modal-overlay">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
-    <h2 id="modal-title">Coin Name</h2>
-    <div class="modal-ticker" id="modal-ticker">TICKER</div>
-    <div class="modal-price" id="modal-price">$0.00</div>
-    <p id="modal-desc" style="color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem;"></p>
-    <div class="modal-meta">
-      <div class="modal-meta-item">
-        <div class="label">Daily Increase</div>
-        <div class="value" id="modal-daily">+$0.00 today</div>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">ENTERTAINMENT REQUEST NETWORK</p>
+        <h1>Fund the <em>show,</em><br>not a chart.</h1>
+        <p>Use Infinity to request a creator session, Twitter/X Space, live discussion, performance, or community program. The creator receives a clear offer and chooses whether to accept, schedule, or decline.</p>
+        <div class="actions"><a class="primary" href="#request">Create service request</a><a class="secondary" href="#creators">View creators</a></div>
+        <div class="trust"><span>One service unit</span><span>Creator choice</span><span>Purpose logged</span><span>No speculative value</span></div>
       </div>
-      <div class="modal-meta-item">
-        <div class="label">Days Active</div>
-        <div class="value" id="modal-days">0 days</div>
+      <div class="stage" aria-label="Bitcoin Tonight live service network">
+        <div class="stage-ring ring-one"><i></i><i></i><i></i></div><div class="stage-ring ring-two"><i></i><i></i></div>
+        <div class="stage-core"><b>BT</b><span>LIVE SERVICE</span></div>
+        <div class="stage-label label-a">REQUEST</div><div class="stage-label label-b">CREATOR</div><div class="stage-label label-c">LEDGER</div>
       </div>
-      <div class="modal-meta-item">
-        <div class="label">Algorithm</div>
-        <div class="value">SHA-256</div>
-      </div>
-      <div class="modal-meta-item">
-        <div class="label">Next Price</div>
-        <div class="value" id="modal-next">—</div>
-      </div>
-    </div>
-    <div class="paypal-btn-wrapper">
-      <p style="font-weight: 700; margin-bottom: 0.75rem;">Buy Now via PayPal</p>
-      <form id="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-        <input type="hidden" name="cmd" value="_xclick" />
-        <input type="hidden" name="business" value="watsonkris611@gmail.com" />
-        <input type="hidden" name="currency_code" value="USD" />
-        <input type="hidden" name="item_name" id="paypal-item-name" value="Bitcoin Tonight Coin" />
-        <input type="hidden" name="amount" id="paypal-amount" value="1.00" />
-        <input type="hidden" name="no_shipping" value="1" />
-        <input type="hidden" name="return" value="https://bitcoin-tonight-coin.com/thankyou.html" />
-        <input type="hidden" name="cancel_return" value="https://bitcoin-tonight-coin.com/" />
+    </section>
 
-        <label style="font-size: 0.85rem; color: var(--muted);">Quantity (coins)</label>
-        <input type="number" name="quantity" id="paypal-qty" value="1" min="1" max="1000"
-               style="margin-top: 0.25rem;" />
+    <section class="definition">
+      <div><p class="eyebrow">WHAT THE COIN MEANS</p><h2>A coin is a service commitment.</h2></div>
+      <div class="definition-grid"><article><b>01</b><h3>Request</h3><p>A viewer defines the desired entertainment, audience purpose, tags, potential, and connected product.</p></article><article><b>02</b><h3>Creator decides</h3><p>The selected creator accepts, schedules, goes live, or declines. A request never forces participation.</p></article><article><b>03</b><h3>Ledger resolves</h3><p>Accepted work credits the creator. Declined work returns the locked unit to the viewer.</p></article></div>
+    </section>
 
-        <button type="submit" class="paypal-submit">
-          <!-- PayPal logo SVG inline -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7.076 21.337H2.47a.641.641 0 01-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 00-.607-.541c-.013.076-.026.175-.041.26-.61 3.127-2.595 6.687-8.723 6.687H9.66l-1.24 7.863h3.937c.458 0 .847-.33.919-.783l.037-.197.73-4.63.046-.254c.072-.453.46-.783.919-.783h.577c3.747 0 6.679-1.521 7.533-5.922.357-1.833.173-3.363-.916-4.7z" fill="#fff"/>
-          </svg>
-          Pay with PayPal
-        </button>
+    <section id="creators" class="creator-section">
+      <div class="section-head"><div><p class="eyebrow">CREATOR DIRECTORY</p><h2>Choose who you want to hear.</h2></div><button class="secondary button" id="open-creator">Add yourself as a creator</button></div>
+      <div class="creator-grid" id="creator-grid"></div>
+    </section>
+
+    <section id="request" class="request-section">
+      <div class="request-copy"><p class="eyebrow">SERVICE REQUEST BUILDER</p><h2>Give the Space a reason to exist.</h2><p>Infinity scans the structured purpose, potential, topic tags, and product relationship. One local service unit is locked until the creator decides.</p><div class="unit-card"><span>REQUEST COST</span><b>1 Infinity service unit</b><small>Local prototype ledger entry; no external exchange value is promised.</small></div></div>
+      <form id="request-form" class="request-form">
+        <label>Creator<select id="request-creator" required></select></label>
+        <label>Session title<input id="request-title" required maxlength="100" placeholder="What should the Space or show be called?"></label>
+        <label>Purpose<textarea id="request-purpose" required maxlength="500" placeholder="What should this session accomplish for its audience?"></textarea></label>
+        <div class="two"><label>Potential<input id="request-potential" maxlength="160" placeholder="What could grow from it?"></label><label>Product connection<input id="request-product" maxlength="100" placeholder="Optional product or project"></label></div>
+        <label>Topic tags<input id="request-tags" maxlength="160" placeholder="music, bitcoin tonight, repair, comedy"></label>
+        <label>Twitter/X Space link<input id="request-link" type="url" placeholder="Optional until scheduled"></label>
+        <button class="primary button" type="submit">Lock 1 Infinity and send request</button>
+        <p class="form-status" id="request-status" role="status"></p>
       </form>
-    </div>
-  </div>
-</div>
+    </section>
 
-<!-- ─── Footer ────────────────────────────────────────────── -->
-<footer>
-  <p>© 2026 Bitcoin Tonight Coin. All rights reserved.</p>
-  <p style="margin-top: 0.5rem;">
-    Payments processed securely via <a href="https://www.paypal.com" target="_blank" rel="noopener">PayPal</a>.
-    Not affiliated with Bitcoin or any existing blockchain network.
-  </p>
-</footer>
+    <section id="wallet" class="wallet-section">
+      <div class="section-head"><div><p class="eyebrow">WALLET</p><h2>Service units stay attached to work.</h2></div><span class="local-badge">THIS DEVICE</span></div>
+      <div class="wallet-grid"><article><span>AVAILABLE</span><b id="wallet-card-available">10</b><small>Infinity units ready for service requests</small></article><article><span>LOCKED</span><b id="wallet-locked">0</b><small>Awaiting creator decision</small></article><article><span>CREATOR EARNED</span><b id="wallet-earned">0</b><small>Accepted service units</small></article><article><span>REQUESTS</span><b id="wallet-requests">0</b><small>Complete history on this device</small></article></div>
+    </section>
 
-<script src="js/coins.js"></script>
-<script>
-/* ── Render coins grid ─────────────────────────────────── */
-function renderCoins() {
-  const grid = document.getElementById("coins-grid");
-  grid.innerHTML = "";
+    <section id="ledger" class="ledger-section">
+      <div class="section-head"><div><p class="eyebrow">SERVICE LEDGER</p><h2>Every decision leaves a reason.</h2></div><button class="secondary button" id="export-ledger">Export ledger</button></div>
+      <div class="ledger-list" id="ledger-list"></div>
+    </section>
 
-  COINS.forEach((coin) => {
-    const { price, dailyIncrease, daysElapsed, launched } = calculateCoinPrice(
-      coin.launchDate,
-      coin.id
-    );
+    <section class="scan-section"><div><p class="eyebrow">INFINITY SCAN FIELDS</p><h2>Purpose becomes reusable intelligence.</h2></div><div class="scan-grid"><span>Creator identity</span><span>Session purpose</span><span>Audience potential</span><span>Topic tags</span><span>Product relationship</span><span>Acceptance state</span><span>Live-session reference</span><span>Completion evidence</span></div></section>
+  </main>
 
-    const card = document.createElement("div");
-    card.className = "coin-card";
-    card.setAttribute("role", "button");
-    card.setAttribute("tabindex", "0");
-    card.setAttribute("aria-label", `View ${coin.name} details`);
+  <dialog id="creator-dialog"><form method="dialog" id="creator-form"><button class="close" value="cancel" aria-label="Close">×</button><p class="eyebrow">CREATOR CLAIM</p><h2>Add your service profile</h2><p>This creates an unverified local directory profile. Shared identity verification comes with the connected Infinity ledger.</p><label>Display name<input id="creator-name" required maxlength="60"></label><label>Twitter/X handle<input id="creator-handle" maxlength="60" placeholder="@handle"></label><label>What you create<textarea id="creator-bio" required maxlength="240"></textarea></label><label>Topics<input id="creator-topics" maxlength="120" placeholder="music, conversation, comedy"></label><button class="primary button" value="default">Add creator profile</button></form></dialog>
 
-    card.innerHTML = `
-      <div class="coin-header">
-        <div class="coin-icon" style="background:${coin.color}">${coin.icon}</div>
-        <div>
-          <div class="coin-name">${coin.name}</div>
-          <div class="coin-ticker">${coin.ticker}</div>
-        </div>
-      </div>
-      <div class="coin-desc">${coin.description}</div>
-      <div class="coin-price-row">
-        <div class="coin-price">$${price.toFixed(2)}</div>
-        ${
-          launched
-            ? `<div class="coin-change">+$${dailyIncrease.toFixed(2)}/day</div>`
-            : `<div class="badge-soon">Launches 11 PM</div>`
-        }
-      </div>
-      <a class="coin-buy-btn" href="#" onclick="openModal('${coin.id}'); return false;">
-        Buy ${coin.ticker}
-      </a>
-    `;
-
-    card.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") openModal(coin.id);
-    });
-
-    grid.appendChild(card);
-  });
-}
-
-/* ── Live price ticker tape ────────────────────────────── */
-function renderTicker() {
-  const ticker = document.getElementById("ticker");
-  let html = "";
-  COINS.forEach((coin) => {
-    const { price } = calculateCoinPrice(coin.launchDate, coin.id);
-    html += `<span class="ticker-item">
-      <span class="t-name">${coin.ticker}</span>
-      <span class="t-price">$${price.toFixed(2)}</span>
-      <span class="t-up">▲</span>
-    </span>`;
-  });
-  // Duplicate for seamless loop
-  ticker.innerHTML = html + html;
-}
-
-/* ── Update live BTN price in stats bar ────────────────── */
-function updateStats() {
-  const btn = COINS.find((c) => c.id === "btn");
-  const { price } = calculateCoinPrice(btn.launchDate, btn.id);
-  document.getElementById("stat-live-price").textContent = `$${price.toFixed(2)}`;
-}
-
-/* ── Modal ─────────────────────────────────────────────── */
-function openModal(coinId) {
-  const coin = COINS.find((c) => c.id === coinId);
-  if (!coin) return;
-
-  const { price, dailyIncrease, daysElapsed, launched } = calculateCoinPrice(
-    coin.launchDate,
-    coin.id
-  );
-
-  document.getElementById("modal-title").textContent = coin.name;
-  document.getElementById("modal-ticker").textContent = coin.ticker;
-  document.getElementById("modal-price").textContent = `$${price.toFixed(2)}`;
-  document.getElementById("modal-desc").textContent = coin.description;
-  document.getElementById("modal-daily").textContent = launched
-    ? `+$${dailyIncrease.toFixed(2)} today`
-    : "Launches at 11 PM";
-  document.getElementById("modal-days").textContent = `${daysElapsed} day${daysElapsed !== 1 ? "s" : ""}`;
-  document.getElementById("modal-next").textContent = `~$${(price + dailyIncrease / 24).toFixed(2)} in 1h`;
-
-  // PayPal
-  document.getElementById("paypal-item-name").value = `${coin.name} (${coin.ticker}) - Bitcoin Tonight Coin`;
-  document.getElementById("paypal-amount").value = price.toFixed(2);
-
-  // Qty change updates amount
-  const qtyInput = document.getElementById("paypal-qty");
-  qtyInput.value = 1;
-  qtyInput.oninput = () => {
-    const qty = Math.max(1, parseInt(qtyInput.value) || 1);
-    document.getElementById("paypal-amount").value = (price * qty).toFixed(2);
-  };
-
-  document.getElementById("modal-overlay").classList.add("open");
-  document.body.style.overflow = "hidden";
-}
-
-function closeModal() {
-  document.getElementById("modal-overlay").classList.remove("open");
-  document.body.style.overflow = "";
-}
-
-document.getElementById("modal-close").addEventListener("click", closeModal);
-document.getElementById("modal-overlay").addEventListener("click", (e) => {
-  if (e.target === e.currentTarget) closeModal();
-});
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeModal();
-});
-
-/* ── SHA-256 hash demo ─────────────────────────────────── */
-const hashInput = document.getElementById("hash-input");
-const hashOutput = document.getElementById("hash-output");
-
-async function updateHash() {
-  const val = hashInput.value;
-  if (!val) {
-    hashOutput.textContent = "—";
-    return;
-  }
-  hashOutput.textContent = "Computing…";
-  const hex = await sha256(val);
-  hashOutput.textContent = hex;
-}
-
-hashInput.addEventListener("input", updateHash);
-
-/* ── Init ──────────────────────────────────────────────── */
-renderCoins();
-renderTicker();
-updateStats();
-
-// Refresh prices every 60 seconds
-setInterval(() => {
-  renderCoins();
-  renderTicker();
-  updateStats();
-}, 60_000);
-</script>
+  <footer><b>Bitcoin Tonight</b><span>Infinity service access · creator-controlled entertainment requests · development ledger</span></footer>
+  <nav class="mobile-dock"><a href="#top">Home</a><a href="#creators">Creators</a><a href="#request">Request</a><a href="#ledger">Ledger</a></nav>
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
